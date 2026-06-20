@@ -20,8 +20,9 @@ export default function LiveResult({ match, isHost, onRematch, onLeave }) {
 
   return (
     <div className="screen duel-screen">
-      <p className="duel-label">Live Result</p>
-
+      <BKBrand compact />
+      <div className="duel-card" style={{ marginTop: '24px' }}>
+      <p className="duel-label"><Radio size={12} /> Live result</p>
       <div className="duel-scoreline">
         <div className="duel-player">
           <span className="duel-player-name">{match.host_name}</span>
@@ -36,15 +37,17 @@ export default function LiveResult({ match, isHost, onRematch, onLeave }) {
 
       <p className="duel-verdict">{verdict.line}</p>
       <p className="duel-gloat">{verdict.gloat}</p>
-
+      </div>
       <div className="duel-actions">
         {isHost ? (
-          <button className="btn-primary" onClick={onRematch}>Rematch</button>
+          <BKButton icon={RotateCcw} onClick={onRematch}>Rematch</BKButton>
         ) : (
           <p className="lobby-status-sub">Waiting for host to call rematch…</p>
         )}
-        <button className="btn-secondary" onClick={onLeave}>Back to Menu</button>
+        <BKButton variant="secondary" icon={ArrowLeft} onClick={onLeave}>Back to menu</BKButton>
       </div>
     </div>
   )
 }
+import { ArrowLeft, Radio, RotateCcw } from 'lucide-react'
+import { BKBrand, BKButton } from '../ui'

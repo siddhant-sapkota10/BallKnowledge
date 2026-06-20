@@ -492,6 +492,7 @@ export default function App() {
           : 'Loading challenge…'
     return (
       <div className="screen loading-screen">
+        <div className="loading-spinner" aria-hidden="true" />
         <p className="loading-text">{msg}</p>
       </div>
     )
@@ -564,6 +565,7 @@ export default function App() {
     if (!currentQuestion) {
       return (
         <div className="screen loading-screen">
+          <div className="loading-spinner" aria-hidden="true" />
           <p className="loading-text">Finishing…</p>
         </div>
       )

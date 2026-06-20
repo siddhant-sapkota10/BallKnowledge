@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Check, Copy, RotateCcw } from 'lucide-react'
+import { BKBrand, BKButton, BKCard } from './ui'
 
 export default function ChallengeLinkScreen({ match, onPlayAgain }) {
   const [copied, setCopied] = useState(false)
@@ -17,22 +19,15 @@ export default function ChallengeLinkScreen({ match, onPlayAgain }) {
 
   return (
     <div className="screen link-screen">
-      <p className="link-screen-label">Challenge created</p>
-      <h2 className="link-screen-title">
-        {match.challenger_name}, you scored {match.challenger_score}/10
-      </h2>
-      <p className="link-gloat">
-        I scored {match.challenger_score}/10 on Ball Knowledge. Beat it.
-      </p>
-      <div className="link-box">
-        <span className="link-url">{link}</span>
-      </div>
-      <button className="btn-primary" onClick={handleCopy}>
-        {copied ? 'Copied!' : 'Copy Link'}
-      </button>
-      <button className="btn-secondary" onClick={onPlayAgain}>
-        Play Again
-      </button>
+      <BKBrand compact />
+      <BKCard className="mt-6">
+        <p className="link-screen-label">Challenge ready</p>
+        <h2 className="link-screen-title">{match.challenger_name} set the bar at {match.challenger_score}/10.</h2>
+        <p className="link-gloat">Send it. Apply pressure. Await excuses.</p>
+        <div className="link-box"><span className="link-url">{link}</span></div>
+        <BKButton icon={copied ? Check : Copy} onClick={handleCopy}>{copied ? 'Copied' : 'Copy challenge link'}</BKButton>
+        <BKButton variant="secondary" icon={RotateCcw} className="mt-3" onClick={onPlayAgain}>Play again</BKButton>
+      </BKCard>
     </div>
   )
 }

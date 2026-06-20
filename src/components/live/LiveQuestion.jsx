@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { Radio } from 'lucide-react'
+import { BKBrand } from '../ui'
 
 function shuffle(arr) {
   const a = [...arr]
@@ -88,6 +90,10 @@ export default function LiveQuestion({
 
   return (
     <div className="screen">
+      <div className="question-topline">
+        <BKBrand compact />
+        <span className="bk-badge bk-badge-cyan"><Radio size={12} /> Live</span>
+      </div>
       <div className="live-scorebar">
         <div className="live-score-cell">
           <span className="live-score-name">{liveMatch.host_name}</span>

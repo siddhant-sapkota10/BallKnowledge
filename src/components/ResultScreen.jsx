@@ -9,20 +9,21 @@ function getMessage(score) {
 export default function ResultScreen({ score, onPlayAgain, onChallenge }) {
   return (
     <div className="screen result-screen">
-      <p className="result-label">Final Score</p>
-      <div className="result-score-wrap">
-        <span className="result-score">{score}</span>
-        <span className="result-denom"> / 10</span>
+      <BKBrand compact />
+      <div className="result-card" style={{ marginTop: '24px' }}>
+        <p className="result-label">Full time</p>
+        <div className="result-score-wrap">
+          <span className="result-score">{score}</span>
+          <span className="result-denom">/10</span>
+        </div>
+        <p className="result-message">{getMessage(score)}</p>
       </div>
-      <p className="result-message">{getMessage(score)}</p>
       <div className="result-actions">
-        <button className="btn-primary" onClick={onChallenge}>
-          Challenge a Mate
-        </button>
-        <button className="btn-secondary" onClick={onPlayAgain}>
-          Play Again
-        </button>
+        <BKButton icon={Swords} onClick={onChallenge}>Challenge a mate</BKButton>
+        <BKButton variant="secondary" icon={RotateCcw} onClick={onPlayAgain}>Play again</BKButton>
       </div>
     </div>
   )
 }
+import { RotateCcw, Swords } from 'lucide-react'
+import { BKBrand, BKButton } from './ui'

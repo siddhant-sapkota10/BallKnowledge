@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Check, Copy, RotateCcw, Sparkles } from 'lucide-react'
+import { BKBrand, BKButton } from './ui'
 
 // ── Verdict ────────────────────────────────────────────────────────────────
 
@@ -136,8 +138,9 @@ export default function DuelResultScreen({ match, eloResult, onRematch }) {
 
   return (
     <div className="screen duel-screen">
-      <p className="duel-label">Head to Head</p>
-
+      <BKBrand compact />
+      <div className="duel-card" style={{ marginTop: '24px' }}>
+      <p className="duel-label"><Sparkles size={12} /> Head to head</p>
       <div className="duel-scoreline">
         <div className="duel-player">
           <span className="duel-player-name">{match.opponent_name}</span>
@@ -166,12 +169,12 @@ export default function DuelResultScreen({ match, eloResult, onRematch }) {
       <p className="duel-gloat">{gloat}</p>
 
       <PowerUpSummary match={match} />
-
+      </div>
       <div className="duel-actions">
-        <button className="btn-primary" onClick={onRematch}>Rematch</button>
-        <button className="btn-secondary" onClick={handleCopy}>
-          {copied ? 'Copied!' : 'Copy Link'}
-        </button>
+        <BKButton icon={RotateCcw} onClick={onRematch}>Run it back</BKButton>
+        <BKButton variant="secondary" icon={copied ? Check : Copy} onClick={handleCopy}>
+          {copied ? 'Copied' : 'Share result link'}
+        </BKButton>
       </div>
     </div>
   )

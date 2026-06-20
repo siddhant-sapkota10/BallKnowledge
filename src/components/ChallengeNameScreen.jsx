@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Send } from 'lucide-react'
+import { BKBrand, BKButton, BKCard } from './ui'
 
 export default function ChallengeNameScreen({ score, onSubmit }) {
   const [name, setName] = useState('')
@@ -15,25 +17,18 @@ export default function ChallengeNameScreen({ score, onSubmit }) {
 
   return (
     <div className="screen name-screen">
-      <p className="name-screen-score">
-        You scored <strong>{score}/10</strong>
-      </p>
-      <h2 className="name-screen-title">Enter your name to challenge a mate</h2>
-      <form onSubmit={handleSubmit} className="name-form">
-        <input
-          className="name-input"
-          type="text"
-          placeholder="Your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          maxLength={30}
-          autoFocus
-          disabled={busy}
-        />
-        <button className="btn-primary" type="submit" disabled={!name.trim() || busy}>
-          {busy ? 'Creating…' : 'Create Challenge'}
-        </button>
-      </form>
+      <BKBrand compact />
+      <BKCard className="mt-6">
+        <p className="name-screen-score">You put up <strong>{score}/10</strong></p>
+        <h2 className="name-screen-title">Who’s talking in the group chat?</h2>
+        <form onSubmit={handleSubmit} className="name-form">
+          <input className="name-input" type="text" placeholder="Your name" value={name}
+            onChange={(e) => setName(e.target.value)} maxLength={30} autoFocus disabled={busy} />
+          <BKButton icon={Send} type="submit" disabled={!name.trim() || busy}>
+            {busy ? 'Creating…' : 'Create challenge'}
+          </BKButton>
+        </form>
+      </BKCard>
     </div>
   )
 }

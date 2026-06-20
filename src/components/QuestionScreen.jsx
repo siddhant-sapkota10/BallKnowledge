@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { Snowflake, Zap } from 'lucide-react'
+import { BKBrand } from './ui'
 
 function shuffle(arr) {
   const a = [...arr]
@@ -81,8 +83,9 @@ export default function QuestionScreen({
 
   return (
     <div className="screen">
+      <div className="question-topline"><BKBrand compact /></div>
       {frozenBy && (
-        <div className="frozen-banner">Frozen by {frozenBy}</div>
+        <div className="frozen-banner"><Snowflake size={15} className="inline" /> Frozen by {frozenBy}</div>
       )}
 
       <div className="question-header">
@@ -107,14 +110,14 @@ export default function QuestionScreen({
           onClick={() => !powerUpsUsed?.freeze && onArmPowerUp?.('freeze')}
           disabled={!!powerUpsUsed?.freeze}
         >
-          {freezeLabel}
+          <Snowflake size={14} className="mr-1 inline" /> {freezeLabel}
         </button>
         <button
           className={`powerup-btn${powerUpsUsed?.steal ? ' used' : ' available'}`}
           onClick={() => !powerUpsUsed?.steal && onArmPowerUp?.('steal')}
           disabled={!!powerUpsUsed?.steal}
         >
-          {stealLabel}
+          <Zap size={14} className="mr-1 inline" /> {stealLabel}
         </button>
       </div>
 

@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { ArrowLeft, LogIn } from 'lucide-react'
+import { BKBrand, BKButton, BKCard } from '../ui'
 
 export default function LiveLobbyJoin({ onJoin, onBack }) {
   const [code, setCode] = useState('')
@@ -21,8 +23,10 @@ export default function LiveLobbyJoin({ onJoin, onBack }) {
 
   return (
     <div className="screen name-screen">
-      <p className="challenge-badge">Live Game</p>
-      <h2 className="name-screen-title">Enter room code</h2>
+      <BKBrand compact />
+      <BKCard className="mt-6">
+      <p className="challenge-badge">Live mode</p>
+      <h2 className="name-screen-title">Enter the room code.</h2>
       <form onSubmit={handleSubmit} className="name-form">
         <input
           className="name-input room-code-input"
@@ -35,17 +39,12 @@ export default function LiveLobbyJoin({ onJoin, onBack }) {
           disabled={joining}
         />
         {error && <p className="form-error">{error}</p>}
-        <button
-          className="btn-primary"
-          type="submit"
-          disabled={code.trim().length !== 4 || joining}
-        >
+        <BKButton icon={LogIn} type="submit" disabled={code.trim().length !== 4 || joining}>
           {joining ? 'Joining…' : 'Join Game'}
-        </button>
-        <button className="btn-secondary" type="button" onClick={onBack} disabled={joining}>
-          Back
-        </button>
+        </BKButton>
+        <BKButton variant="secondary" icon={ArrowLeft} type="button" onClick={onBack} disabled={joining}>Back</BKButton>
       </form>
+      </BKCard>
     </div>
   )
 }
