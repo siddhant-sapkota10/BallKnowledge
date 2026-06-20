@@ -1,0 +1,92 @@
+export const sampleQuestions = [
+  {
+    id: 1,
+    prompt: 'Which club has won the most Premier League titles?',
+    correctAnswer: 'Manchester United',
+    distractors: ['Manchester City', 'Chelsea', 'Arsenal'],
+  },
+  {
+    id: 2,
+    prompt: 'Who is the all-time top scorer in Premier League history?',
+    correctAnswer: 'Alan Shearer',
+    distractors: ['Wayne Rooney', 'Andrew Cole', 'Frank Lampard'],
+  },
+  {
+    id: 3,
+    prompt: 'Which Premier League stadium has the largest capacity?',
+    correctAnswer: 'Old Trafford',
+    distractors: ['Emirates Stadium', 'Etihad Stadium', 'Tottenham Hotspur Stadium'],
+  },
+  {
+    id: 4,
+    prompt: 'Who scored the fastest hat-trick in Premier League history (2 mins 56 secs)?',
+    correctAnswer: 'Sadio Mané',
+    distractors: ['Robbie Fowler', 'Harry Kane', 'Jermain Defoe'],
+  },
+  {
+    id: 5,
+    prompt: 'Which player has made the most Premier League appearances?',
+    correctAnswer: 'Gareth Barry',
+    distractors: ['Ryan Giggs', 'David James', 'James Milner'],
+  },
+  {
+    id: 6,
+    prompt: 'In which year was the Premier League founded?',
+    correctAnswer: '1992',
+    distractors: ['1990', '1985', '1994'],
+  },
+  {
+    id: 7,
+    prompt: 'Which club went an entire Premier League season unbeaten (The Invincibles)?',
+    correctAnswer: 'Arsenal',
+    distractors: ['Chelsea', 'Manchester City', 'Liverpool'],
+  },
+  {
+    id: 8,
+    prompt: 'Who scored the very first Premier League goal?',
+    correctAnswer: 'Brian Deane',
+    distractors: ['Alan Shearer', 'Teddy Sheringham', 'Mark Hughes'],
+  },
+  {
+    id: 9,
+    prompt: 'Who won the inaugural Premier League title in the 1992–93 season?',
+    correctAnswer: 'Manchester United',
+    distractors: ['Aston Villa', 'Arsenal', 'Blackburn Rovers'],
+  },
+  {
+    id: 10,
+    prompt: 'Who holds the record for most goals in a single Premier League season (36)?',
+    correctAnswer: 'Erling Haaland',
+    distractors: ['Alan Shearer', 'Andy Cole', 'Luis Suárez'],
+  },
+  {
+    id: 11,
+    prompt: 'Which goalkeeper holds the Premier League record for most clean sheets?',
+    correctAnswer: 'Petr Čech',
+    distractors: ['David James', 'Edwin van der Sar', 'David Seaman'],
+  },
+  {
+    id: 12,
+    prompt: 'What is the nickname of Leicester City, who won the 2015–16 Premier League?',
+    correctAnswer: 'The Foxes',
+    distractors: ['The Trotters', 'The Hornets', 'The Robins'],
+  },
+  {
+    id: 13,
+    prompt: 'Which player has won the most Premier League Golden Boot awards (4)?',
+    correctAnswer: 'Thierry Henry',
+    distractors: ['Alan Shearer', 'Andrew Cole', 'Harry Kane'],
+  },
+  {
+    id: 14,
+    prompt: 'How many clubs compete in the Premier League each season?',
+    correctAnswer: '20',
+    distractors: ['18', '22', '24'],
+  },
+  {
+    id: 15,
+    prompt: 'Which Premier League club plays home matches at Selhurst Park?',
+    correctAnswer: 'Crystal Palace',
+    distractors: ['Brighton & Hove Albion', 'Brentford', 'Watford'],
+  },
+]
